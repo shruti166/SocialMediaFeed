@@ -1,3 +1,4 @@
+import { signInWithGoogle } from "../../firebase"; 
 import login1 from "../../assets/login/login-1.jpeg";
 import login3 from "../../assets/login/login-3.jpeg";
 import login5 from "../../assets/login/login-5.jpeg";
@@ -31,8 +32,19 @@ function ImageGrid() {
 }
 
 function LoginSection() {
+  const handleGoogleLogin = async () => {
+    try {
+      const user = await signInWithGoogle();
+      console.log("User signed in successfully:", user);
+      // Handle successful login, e.g., navigate to another page or store user info
+    } catch (error) {
+      console.error("Error during Google login:", error);
+      alert("Failed to log in. Please try again.");
+    }
+  };
+
   return (
-    <div className="flex flex-col h-[30vh] bg-white shadow-5xl z-30 mt-[-20px] rounded-t-3xl mx-2">
+    <div className="flex flex-col h-[30vh] bg-white shadow-5xl z-30  rounded-t-3xl mx-2">
       {/* Logo Section */}
       <div className="w-full flex justify-center items-center mt-4">
         <img
@@ -50,7 +62,10 @@ function LoginSection() {
 
       {/* Continue with Google Button */}
       <div className="flex justify-center items-center mt-6">
-        <button className="flex items-center px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none">
+        <button
+          onClick={handleGoogleLogin}
+          className="flex items-center px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none"
+        >
           <img
             src="https://img.icons8.com/color/48/google-logo.png"
             alt="Google Icon"

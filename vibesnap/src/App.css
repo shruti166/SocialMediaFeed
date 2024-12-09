@@ -3,6 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  max-width: 600px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;    /* Centers content vertically */
+  min-height: 100vh;      /* Ensures the container takes up the full viewport height */
+  margin: 0 auto;         /* Centers the container itself horizontally in the viewport */
+}
+
+
+.kumbh-font {
+  font-family: 'Kumbh Sans', system-ui, Avenir, Helvetica, Arial, sans-serif,
+}
 
 
 
@@ -19,12 +33,4 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
