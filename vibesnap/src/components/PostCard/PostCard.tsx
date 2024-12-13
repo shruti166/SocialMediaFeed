@@ -13,24 +13,9 @@ import messagerIcon from "../../assets/social-icons/messenger.svg";
 import copy from "../../assets/icons/copy.svg";
 import heartFilledIcon from "../../assets/icons/heart-liked.svg";
 import shareIcon from "../../assets/icons/share.svg";
+import Toast from "../Toast/Toast";
 
 // Simple Toast Component
-const Toast = ({
-  message,
-  onClose,
-}: {
-  message: string;
-  onClose: () => void;
-}) => {
-  return (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm px-4 py-2 rounded shadow-lg">
-      {message}
-      <button onClick={onClose} className="ml-4 text-gray-400 hover:text-white">
-        ✕
-      </button>
-    </div>
-  );
-};
 
 interface PostCardProps {
   user: {
